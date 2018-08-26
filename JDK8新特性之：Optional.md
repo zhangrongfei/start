@@ -1,4 +1,5 @@
 #痛点
+
 在java编码过程中，大家碰到的最多的异常是什么，我相信必然这货`NullPointerException`必然是排行第一的。那我们在平时编码中，有各种编码规范与其相关，比如时时的判断`null`，方法禁止返回`null`等，例如
 ```
 public void bindUserToRole(User user) {
