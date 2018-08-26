@@ -1,4 +1,4 @@
-#痛点
+# 痛点
 
 在java编码过程中，大家碰到的最多的异常是什么，我相信必然这货`NullPointerException`必然是排行第一的。那我们在平时编码中，有各种编码规范与其相关，比如时时的判断`null`，方法禁止返回`null`等，例如
 ```
@@ -45,7 +45,8 @@ if(roleOpt.isPresent()){
 这样，我们仅需要对我们关心的做一次校验，省却了前面的一系列的检验操作。
 
 
-#Optional的引入
+# Optional的引入
+
 基于上述的一些原因，在JDK8中，引入了一个新的类`java.util.Optional`，来避免这类问题的处理。
 先看下类的说明
 >A container object which may or may not contain a non-null value.If a value is present, `isPresent()`will return `true` and`get()` will return the value.
@@ -164,7 +165,8 @@ bb
         System.out.println(optional.orElseThrow(() -> new RuntimeException()));
 ```
 
-#使用场合注意
+# 使用场合注意
+
 >Reports calls to java.util.Optional.get() without first checking with a isPresent() call if a value is available. If the Optional does not contain a value, get() will throw an exception. 
 
 Optional.get() 前不事先用 isPresent() 检查值是否可用. 假如 Optional 不包含一个值, get() 将会抛出一个异常
@@ -172,7 +174,8 @@ Optional.get() 前不事先用 isPresent() 检查值是否可用. 假如 Optiona
 
 使用任何像 Optional 的类型作为字段或方法参数都是不可取的. Optional 只设计为类库方法的, 可明确表示可能无值情况下的返回类型. Optional 类型不可被序列化, 用作字段类型会出问题的
 
-#借鉴
+# 借鉴
+
 *   [https://lw900925.github.io/java/java8-optional.html](https://lw900925.github.io/java/java8-optional.html)
 *   http://www.importnew.com/22060.html
 
